@@ -33,13 +33,13 @@
         </div>
 		-->
         <div class="detailpic_wrap">			
-			<font size="26">
+			<!--<font size="13">-->
 			<b>
             <strong>说明:</strong><br>
             1. 如果不能自动下载，请点击右上角[打开]按钮，系统自动根据您的手机设备下载Android/Ios安装包。<br>
             2. 点击[打开]按钮后，会提示您是否安装千翻万州麻将手机端，选[是]自动安装，并按手机[Home]返回键，到桌面查看安装进度。
 			</b>
-			</font>
+			<!--</font>-->
         </div>
     </div>
     <!--end 中间-->
@@ -68,6 +68,7 @@
 
     function browserRedirect() {
         var sUserAgent = navigator.userAgent.toLowerCase();
+		 <!-- alert(sUserAgent);-->
         var bIsIpad = sUserAgent.match(/ipad/i) == "ipad";
         var bIsIphoneOs = sUserAgent.match(/iphone os/i) == "iphone os";
         var bIsMidp = sUserAgent.match(/midp/i) == "midp";

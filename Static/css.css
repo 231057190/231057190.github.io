@@ -61,7 +61,7 @@ h1,h2,h3,h4,h5{font-weight: normal; font-size: 1rem;}
 #wxDiv
 {
   width:100%; height:135%; background-color:Black; opacity:0.5; -moz-opacity:0.5; filter:alpha(opacity=50);
-  z-index:100;  position:absolute;  top:0px; left:0px; right:0px; bottom:0px;
+  z-index:100;  position:absolute;  top:0px; left:0px; 
   display:none; 
 
 }
@@ -69,8 +69,8 @@ h1,h2,h3,h4,h5{font-weight: normal; font-size: 1rem;}
 {
     color:White;
     font-size:20px;
-    margin-top:40%;
-    margin-left:20%;
+    margin-top:1%;
+    margin-left:1%;
     }
     .wenziwx span
 {

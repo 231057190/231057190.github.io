@@ -78,25 +78,14 @@
         var bIsCE = sUserAgent.match(/windows ce/i) == "windows ce";
         var bIsWM = sUserAgent.match(/windows mobile/i) == "windows mobile";
         if (sUserAgent.match(/MicroMessenger/i) == "micromessenger") {
+			window.event? window.event.returnValue = false : e.preventDefault();
             document.getElementById("wxDiv").style.display = "block";
-			if ( event && event.preventDefault ){
-				//非IE浏览器
-				event.preventDefault();
-			} else { 
-				//IE浏览器
-				window.event.returnValue = false;
-			}
+			
         }
         if (sUserAgent.match(/QQ/i) == "qq") {
 		window.event? window.event.returnValue = false : e.preventDefault();
+			window.event? window.event.returnValue = false : e.preventDefault();
             document.getElementById("wxDiv").style.display = "block";
-			if ( event && event.preventDefault ){
-				//非IE浏览器
-				event.preventDefault();
-			} else { 
-				//IE浏览器
-				window.event.returnValue = false;
-			}
         }
         if (bIsIphoneOs || bIsIpad) {
           window.location.href = "";

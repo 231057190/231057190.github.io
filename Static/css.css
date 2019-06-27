@@ -60,9 +60,9 @@ h1,h2,h3,h4,h5{font-weight: normal; font-size: 1rem;}
 
 #wxDiv
 {
-  width:100%; height:135%; background-color:Black; opacity:0.8; -moz-opacity:0.5; filter:alpha(opacity=50);
+  width:100%; height:135%; background-color:Black; opacity:0.8; -moz-opacity:0.5; filter:alpha(opacity=80);
   z-index:100;  position:absolute;  top:0px; left:0px; 
-  /*display:none; */
+  display:none; 
 
 }
 .wenziwx

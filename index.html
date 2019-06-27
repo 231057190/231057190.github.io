@@ -1,24 +1,16 @@
-﻿<html>
+﻿<!DOCTYPE html>
+<html lang="en">
 <head>
-    <meta content="text/html; charset=utf-8" />
-    <title></title>
-    <link href="Static/css.css" rel="stylesheet" />
-    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
-    <meta content="yes" name="apple-mobile-web-app-capable" />
-    <meta content="black" name="apple-mobile-web-app-status-bar-style" />
-    <meta name="format-detection" content="telephone=no" />
-    <meta name="format-detection" content="email=no" />
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1"/>
+	<title>新火下载</title>
 </head>
 <body>
-	<!--end 中间-->
-    <div id="wxDiv">
-        <div class="wenziwx">
-			<li><img src="./Static/tip.jpg" alt="" /></li>
-            <span>1.请点击右上角  ··· </span>
-            <span> 2.选择  在浏览器(Safari)中打开</span>
-        </div>
-    </div>
-    <div class="detail_pg">
+	<style type="text/css">
+	*{margin:0; padding:0;}
+	img{max-width: 100%; height: auto;}
+	</style>
+	<div class="detail_pg">
         <div class="shortcut">
             <img src="./Static/logoClient.png" alt="" class="shortcut_logo" />
             <section class="wbw">
@@ -49,53 +41,42 @@
 			<!--</font>-->
         </div>
     </div>
-
-    <!-- end 底部 -->
-    <script src="Static/slip-min.js"></script>
-    <script>
-    document.body.addEventListener("touchstart", function () { });
-    </script>
-    <!-- slip -->
-    <script>
-    if (typeof slip != "undefined") {
-        var ele = document.getElementById("sildex");
-        if (ele != null) { var slipNav = slip('px', ele, { direction: "x", no_bar: true }); };
-    };
-    </script>
-    <!-- end slip -->
-   
-    <script>
-
-    function browserRedirect(event) {
-        var sUserAgent = navigator.userAgent.toLowerCase();
-		 <!-- alert(sUserAgent);-->
-        var bIsIpad = sUserAgent.match(/ipad/i) == "ipad";
-        var bIsIphoneOs = sUserAgent.match(/iphone os/i) == "iphone os";
-        var bIsMidp = sUserAgent.match(/midp/i) == "midp";
-        var bIsUc7 = sUserAgent.match(/rv:1.2.3.4/i) == "rv:1.2.3.4";
-        var bIsUc = sUserAgent.match(/ucweb/i) == "ucweb";
-        var bIsAndroid = sUserAgent.match(/android/i) == "android";
-        var bIsCE = sUserAgent.match(/windows ce/i) == "windows ce";
-        var bIsWM = sUserAgent.match(/windows mobile/i) == "windows mobile";
-        if (sUserAgent.match(/MicroMessenger/i) == "micromessenger") {
-			window.event? window.event.returnValue = false : e.preventDefault();
-            document.getElementById("wxDiv").style.display = "block";
-			
-        }
-        if (sUserAgent.match(/QQ/i) == "qq") {
-		window.event? window.event.returnValue = false : e.preventDefault();
-			window.event? window.event.returnValue = false : e.preventDefault();
-            document.getElementById("wxDiv").style.display = "block";
-        }
-        if (bIsIphoneOs || bIsIpad) {
-          window.location.href = "";
-        }
-        else {
-        window.location.href = "./skwzdn.apk";
-        }
-    }
-	<!--window.onload = browserRedirect;-->
-    <!--browserRedirect();-->
-    </script>
+	
+	<script type="text/javascript">
+		function is_weixin() {
+		    var ua = navigator.userAgent.toLowerCase();
+		    if (ua.match(/MicroMessenger/i) == "micromessenger") {
+		        return true;
+		    } else {
+		        return false;
+		    }
+		}
+		var isWeixin = is_weixin();
+		var winHeight = typeof window.innerHeight != 'undefined' ? window.innerHeight : document.documentElement.clientHeight;
+		function loadHtml(){
+			var div = document.createElement('div');
+			div.id = 'weixin-tip';
+			div.innerHTML = '<p><img src="./Static/tip.jpg" alt="微信打开"/></p>';
+			document.body.appendChild(div);
+		}
+		
+		function loadStyleText(cssText) {
+	        var style = document.createElement('style');
+	        style.rel = 'stylesheet';
+	        style.type = 'text/css';
+	        try {
+	            style.appendChild(document.createTextNode(cssText));
+	        } catch (e) {
+	            style.styleSheet.cssText = cssText; //ie9以下
+	        }
+            var head=document.getElementsByTagName("head")[0]; //head标签之间加上style样式
+            head.appendChild(style); 
+	    }
+	    var cssText = "#weixin-tip{position: fixed; left:0; top:0; background: rgba(0,0,0,0.8); filter:alpha(opacity=80); width: 100%; height:100%; z-index: 100;} #weixin-tip p{text-align: center; margin-top: 10%; padding:0 5%;}";
+		if(isWeixin){
+			loadHtml();
+			loadStyleText(cssText);
+		}
+	</script>
 </body>
 </html>
